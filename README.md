@@ -1,5 +1,13 @@
 # Bookmarklets
 
-[allowTextSelection](javascript:{var%20e=document.createElement(%22style%22);e.type=%22text/css%22,e.innerHTML=%22*,p,div%7Buser-select:text%20!important;-moz-user-select:text%20!important;-webkit-user-select:text%20!important;%7D%22,document.head.appendChild(e);var%20t=!0,n=!1,o=void%200;try%7Bfor(var%20r,a=document.body.getElementsByTagName(%22*%22)%5BSymbol.iterator%5D();!(t=(r=a.next()).done);t=!0)%7Bvar%20l,u=r.value;u.onselectstart=u.ondragstart=u.ondrag=u.oncontextmenu=u.onmousedown=u.onmouseup=function()%7Breturn!0%7D,l=HTMLInputElement,(null!=l&&%22undefined%22!=typeof%20Symbol&&l%5BSymbol.hasInstance%5D?!!l%5BSymbol.hasInstance%5D(u):u%20instanceof%20l)&&%5B%22text%22,%22password%22,%22email%22,%22number%22,%22tel%22,%22url%22%5D.includes(u.type.toLowerCase())&&(u.removeAttribute(%22disabled%22),u.onkeydown=u.onkeyup=function()%7Breturn!0%7D)%7D%7Dcatch(e)%7Bn=!0,o=e%7Dfinally%7Btry%7Bt%7C%7Cnull==a.return%7C%7Ca.return()%7Dfinally%7Bif(n)throw%20o%7D%7D})
+## allowTextSelection
 
-[openInMastodon](javascript:{})
+```javascript
+javascript:{var e=document.createElement("style");e.type="text/css",e.innerHTML="*,p,div{user-select:text !important;-moz-user-select:text !important;-webkit-user-select:text !important;}",document.head.appendChild(e);var t=!0,n=!1,o=void 0;try{for(var r,a=document.body.getElementsByTagName("*")[Symbol.iterator]();!(t=(r=a.next()).done);t=!0){var l,u=r.value;u.onselectstart=u.ondragstart=u.ondrag=u.oncontextmenu=u.onmousedown=u.onmouseup=function(){return!0},l=HTMLInputElement,(null!=l&&"undefined"!=typeof Symbol&&l[Symbol.hasInstance]?!!l[Symbol.hasInstance](u):u instanceof l)&&["text","password","email","number","tel","url"].includes(u.type.toLowerCase())&&(u.removeAttribute("disabled"),u.onkeydown=u.onkeyup=function(){return!0})}}catch(e){n=!0,o=e}finally{try{t||null==a.return||a.return()}finally{if(n)throw o}}}
+```
+
+## openInMastodon
+
+```javascript
+javascript:{document.querySelectorAll("a[href='https://joinmastodon.org'], a[href='https://joinfirefish.org/']").length>0&&(location.href="https://mastodon.social/authorize_interaction?uri=".concat(encodeURIComponent(location.href)));}
+```

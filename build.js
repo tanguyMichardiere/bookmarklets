@@ -13,7 +13,7 @@ readdir("src").then(function (files) {
   ).then(function (results) {
     let readme = "# Bookmarklets\n";
     for (const [name, code] of results) {
-      readme += `\n[${name}](javascript:{${encodeURI(code)}})\n`;
+      readme += `\n## ${name}\n\n\`\`\`javascript\njavascript:{${code}}\n\`\`\`\n`;
     }
     writeFile("README.md", readme);
   });
