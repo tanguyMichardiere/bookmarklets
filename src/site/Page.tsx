@@ -5,7 +5,7 @@ type Props = {
   srcDir: string;
   bookmarkletsDir: string;
   repositoryUrl: string;
-  results: [string, string][];
+  results: Array<[string, string]>;
 };
 
 export default function Page(props: Props): JSX.Element {
@@ -14,18 +14,18 @@ export default function Page(props: Props): JSX.Element {
       <h1>Bookmarklets</h1>
       <ul className="bookmarklet-list">
         {props.results.map(([filename, code]) => (
-          <li key={filename} className="bookmarklet">
+          <li className="bookmarklet" key={filename}>
             <BookmarkletLink code={code} filename={filename} />
             <SourceLink
-              repositoryUrl={props.repositoryUrl}
-              srcDir={props.srcDir}
               bookmarkletsDir={props.bookmarkletsDir}
               filename={filename}
+              repositoryUrl={props.repositoryUrl}
+              srcDir={props.srcDir}
             />
           </li>
         ))}
       </ul>
-      <a href={`${props.repositoryUrl}`} target="_blank">
+      <a href={`${props.repositoryUrl}`} rel="noreferrer" target="_blank">
         {props.repositoryUrl.replace("https://", "")}
       </a>
     </main>

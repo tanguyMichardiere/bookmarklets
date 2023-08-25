@@ -10,8 +10,8 @@ export default function Layout(props: Props): JSX.Element {
       <head>
         <meta charSet="utf-8" />
         <title>Bookmarklets</title>
-        <link rel="stylesheet" href="modern-normalize.css" />
-        <link rel="stylesheet" href="style.css" />
+        <link href="modern-normalize.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
       </head>
       <body>{props.children}</body>
     </html>
