@@ -3,6 +3,7 @@ import SourceLink from "./SourceLink";
 
 type Props = {
   srcDir: string;
+  bookmarkletsDir: string;
   repositoryUrl: string;
   results: [string, string][];
 };
@@ -18,6 +19,7 @@ export default function Page(props: Props): JSX.Element {
             <SourceLink
               repositoryUrl={props.repositoryUrl}
               srcDir={props.srcDir}
+              bookmarkletsDir={props.bookmarkletsDir}
               filename={filename}
             />
           </li>
