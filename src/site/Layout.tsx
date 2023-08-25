@@ -9,8 +9,9 @@ export default function Layout(props: Props): JSX.Element {
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
         <title>Bookmarklets</title>
+        <meta charSet="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="favicon.ico" rel="icon" type="image/x-icon" />
         <link href={`style.${props.cssHash}.css`} rel="stylesheet" />
       </head>
