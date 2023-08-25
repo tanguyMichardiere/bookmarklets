@@ -26,6 +26,9 @@
     ".swcrc": ".eslintrc.js, *.config.js",
     "package.json": "package-lock.json"
   },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
