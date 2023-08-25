@@ -5,7 +5,10 @@ type Props = {
 
 export default function BookmarkletLink(props: Props): JSX.Element {
   return (
-    <a className="bookmarklet-link" href={`javascript:{${props.code}}`}>
+    <a
+      className="rounded bg-blue-500 px-4 py-2 font-bold text-white no-underline transition-colors duration-100 hover:bg-blue-700"
+      href={`javascript:{${props.code}}`}
+    >
       {props.filename.replace(".ts", "")}
     </a>
   );

@@ -10,11 +10,11 @@ type Props = {
 
 export default function Page(props: Props): JSX.Element {
   return (
-    <main className="page">
-      <h1>Bookmarklets</h1>
-      <ul className="bookmarklet-list">
+    <main className="flex flex-col items-center gap-4">
+      <h1 className="text-xl">Bookmarklets</h1>
+      <ul className="flex flex-col items-center gap-4">
         {props.results.map(([filename, code]) => (
-          <li className="bookmarklet" key={filename}>
+          <li className="flex flex-col items-center gap-1" key={filename}>
             <BookmarkletLink code={code} filename={filename} />
             <SourceLink
               bookmarkletsDir={props.bookmarkletsDir}
@@ -25,7 +25,7 @@ export default function Page(props: Props): JSX.Element {
           </li>
         ))}
       </ul>
-      <a href={`${props.repositoryUrl}`} rel="noreferrer" target="_blank">
+      <a className="underline" href={`${props.repositoryUrl}`} rel="noreferrer" target="_blank">
         {props.repositoryUrl.replace("https://", "")}
       </a>
     </main>

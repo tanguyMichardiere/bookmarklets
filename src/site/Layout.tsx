@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 type Props = {
+  cssHash: string;
   children: ReactNode;
 };
 
@@ -10,10 +11,10 @@ export default function Layout(props: Props): JSX.Element {
       <head>
         <meta charSet="utf-8" />
         <title>Bookmarklets</title>
-        <link href="modern-normalize.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" />
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+        <link href={`style.${props.cssHash}.css`} rel="stylesheet" />
       </head>
-      <body>{props.children}</body>
+      <body className="p-4">{props.children}</body>
     </html>
   );
 }
