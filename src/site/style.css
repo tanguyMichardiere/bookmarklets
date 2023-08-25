@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+body {
+  padding: 1rem;
+}
+
 .page {
   display: flex;
   flex-direction: column;
