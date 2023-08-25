@@ -4,14 +4,21 @@
   "jsc": {
     "parser": {
       "syntax": "typescript",
-      "tsx": false,
-      "decorators": false,
-      "dynamicImport": false
+      "tsx": true
     },
     "target": "es5",
+    "transform": {
+      "react": {
+        "runtime": "automatic"
+      }
+    },
     "minify": {
       "compress": true,
-      "mangle": true
+      "mangle": true,
+      "format": {}
     }
+  },
+  "module": {
+    "type": "commonjs"
   }
 }
