@@ -18,18 +18,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
         with:
-          node-version: 20
-          cache: npm
+          version: 8
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.11.1
+          cache: pnpm
       - name: Install dependencies
-        run: npm clean-install
+        run: pnpm install --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: pnpm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
 
   deploy:
     environment:
@@ -40,4 +43,4 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
